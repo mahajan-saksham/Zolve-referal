@@ -537,6 +537,8 @@ section {
 .tracker-stats {
   display: flex;
   justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
 }
 
 .stat {
@@ -567,12 +569,12 @@ section {
 .referral-row {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 2rem;
+  padding: 1.75rem 2rem;
   transition: all 0.3s ease;
-  border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-  margin-bottom: 1.25rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
 }
 
 .referral-row:hover {
@@ -624,26 +626,20 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.25rem;
+  padding: 1.25rem 0.75rem;
   transition: all 0.3s ease;
   gap: 1rem;
-  border-radius: 14px;
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  width: 100%;
 }
 
-.referral-status:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  background-color: #ffffff;
-}
+/* Removed hover effect from inner container */
 
 .status-steps {
   display: flex;
   justify-content: space-between;
   position: relative;
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 0.75rem 0;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -811,8 +807,8 @@ section {
 }
 
 .add-referral-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 107, 68, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .add-referral-btn:active {
@@ -836,15 +832,33 @@ section {
   .referral-row {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     padding: 2rem 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    min-height: 120px; /* Ensure consistent height */
   }
   
   .referral-user {
     margin-bottom: 0;
-    flex: 1;
-    padding-right: 2.5rem;
+    flex: 1.4; /* Increased by 40% */
+    padding-right: 3rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .referral-info {
+    margin-top: 0;
+  }
+
+  .referral-info h4 {
+    font-size: 1.25rem; /* Increased font size */
+    margin-bottom: 0.3rem;
+  }
+  
+  .referral-info p {
+    font-size: 0.95rem; /* Increased font size */
+    margin: 0;
   }
   
   .referral-status {
