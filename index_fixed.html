@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zolve Referral Program</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <meta name="description" content="Refer friends to Zolve and earn rewards. Help your friends move abroad easier while earning up to ₹10,000.">
+    <meta name="theme-color" content="#FF6B44">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <!-- Modern animations and interactions -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Navigation - Zolve Style -->
+        <header class="site-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="images/zolve_logo.svg" alt="Zolve Logo" width="120">
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#">Products</a>
+                        </li>
+                        <li><a href="#">Edge</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="#" class="cta-button primary">Get Started</a>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        <!-- Main Landing Page -->
+        <main class="landing-page">
+            <!-- Section 1: Hero - Updated to match Zolve's clean style -->
+            <section class="hero-section">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h1 class="headline">Help friends move abroad <span class="accent-text">easier</span></h1>
+                        <h2 class="subheadline">Earn up to ₹2,000 with each successful referral</h2>
+                        <p class="subtext">Send your Zolve referral link. Every signup & card swipe earns you cash rewards.</p>
+                        <button class="cta-button primary" id="referralCta">
+                            Send Referral Link
+                        </button>
+                    </div>
+                    <div class="hero-image">
+                        <div class="floating-card">
+                            <div class="card-animation" id="cardAnimation"></div>
+                        </div>
+                        <img src="images/zolve-card-user.jpg" alt="Person with Zolve card" class="main-hero-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: How You Earn - Updated to match Zolve's card style -->
+            <section class="rewards-section">
+                <div class="container">
+                    <h2 class="section-title">How You Earn Rewards</h2>
+                    <div class="rewards-grid">
+                        <div class="reward-card">
+                            <div class="reward-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3>Step 1: Friend Signs Up</h3>
+                            <p>When your friend registers on Zolve using your referral link</p>
+                            <div class="reward-amount">You earn ₹100</div>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                </svg>
+                            </div>
+                            <h3>Step 2: Card Application</h3>
+                            <p>When they successfully apply for a Zolve credit card</p>
+                            <div class="reward-amount">You earn ₹200</div>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                            <h3>Step 3: First Purchase</h3>
+                            <p>When they make their first purchase with their new Zolve card</p>
+                            <div class="reward-amount">You earn ₹200 more</div>
+                        </div>
+                        <div class="reward-card bonus">
+                            <div class="reward-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3>Bonus Reward</h3>
+                            <p>Successfully refer 5 friends who complete all steps</p>
+                            <div class="reward-amount">₹1,000 bonus unlocked</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Real-Life Moment - Updated to match Zolve's style -->
+            <section class="chat-section">
+                <div class="container">
+                    <h2 class="section-title">Share with Friends Moving Abroad</h2>
+                    <div class="chat-container">
+                        <div class="chat-card">
+                            <div class="chat-header">
+                                <div class="chat-info">
+                                    <h3>Chat with Rahul</h3>
+                                    <p>Today, 11:23 AM</p>
+                                </div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="chat-bubble friend">
+                                    I'm flying to the US next week. Any recommendations for banking there?
+                                </div>
+                                <div class="chat-bubble user">
+                                    Check out Zolve! You can get a US credit card before you even leave India. Perfect for students and professionals. No SSN required.
+                                </div>
+                                <div class="chat-bubble friend">
+                                    Sounds perfect! Can you send me a link?
+                                </div>
+                                <div class="chat-bubble user">
+                                    Sure, here's my referral link - we both get a bonus when you sign up! 🎁
+                                </div>
+                            </div>
+                            <div class="chat-action">
+                                <button class="cta-button secondary" id="copyMessageBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                    </svg>
+                                    Copy Referral Message
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Rewards Tracker - Updated to match Zolve's style -->
+            <section class="tracker-section">
+                <div class="container">
+                    <h2 class="section-title">Track Your Referral Rewards</h2>
+                    <div class="tracker-card">
+                        <div class="tracker-header">
+                            <h3>My Referrals</h3>
+                            <div class="tracker-stats">
+                                <div class="stat">
+                                    <span class="stat-number">2</span>
+                                    <span class="stat-label">Referrals</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">₹500</span>
+                                    <span class="stat-label">Earned</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">₹9,500</span>
+                                    <span class="stat-label">Potential</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referral-progress">
+                            <div class="referral-row">
+                                <div class="referral-user">
+                                    <div class="referral-avatar">
+                                        <!-- Image removed -->
+                                    </div>
+                                    <div class="referral-info">
+                                        <h4>Priya M.</h4>
+                                        <p>Referred on May 1, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="referral-status">
+                                    <div class="status-steps">
+                                        <div class="status-step completed">
+                                            <div class="step-icon">✓</div>
+                                            <span>Signed Up</span>
+                                        </div>
+                                        <div class="status-step completed">
+                                            <div class="step-icon">✓</div>
+                                            <span>Card Approved</span>
+                                        </div>
+                                        <div class="status-step completed">
+                                            <div class="step-icon">✓</div>
+                                            <span>First Purchase</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-reward">+₹500</div>
+                                </div>
+                            </div>
+                            <div class="referral-row">
+                                <div class="referral-user">
+                                    <div class="referral-avatar">
+                                        <!-- Image removed -->
+                                    </div>
+                                    <div class="referral-info">
+                                        <h4>Rahul S.</h4>
+                                        <p>Referred on May 3, 2025</p>
+                                    </div>
+                                </div>
+                                <div class="referral-status">
+                                    <div class="status-steps">
+                                        <div class="status-step completed">
+                                            <div class="step-icon">✓</div>
+                                            <span>Signed Up</span>
+                                        </div>
+                                        <div class="status-step in-progress">
+                                            <div class="step-icon">⋯</div>
+                                            <span>Card Pending</span>
+                                        </div>
+                                        <div class="status-step">
+                                            <div class="step-icon"></div>
+                                            <span>First Purchase</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-reward">+₹0</div>
+                                </div>
+                            </div>
+                            <div class="referral-row add-more">
+                                <button class="add-referral-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                    Refer More Friends
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Testimonials - Updated to match Zolve's style -->
+            <section class="testimonial-section">
+                <div class="container">
+                    <h2 class="section-title">What Our Users Say</h2>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+
+                                <div class="testimonial-meta">
+                                    <h4>Rahul S.</h4>
+                                    <p>Student at NYU</p>
+                                </div>
+                                <div class="quote-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"></path><path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"></path></svg>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"I landed in NYC and had my Zolve card working before I even found a SIM card. My roommate referred me, and now I've referred three friends too!"</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <div class="reward-tag">Friend earned ₹500</div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+
+                                <div class="testimonial-meta">
+                                    <h4>Priya M.</h4>
+                                    <p>Working professional</p>
+                                </div>
+                                <div class="quote-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"></path><path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"></path></svg>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Didn't need to chase a bank. Just tapped Zolve & paid for my Uber from the airport. Love how easy it was to get started before even leaving India."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <div class="reward-tag">Friend earned ₹500</div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+
+                                <div class="testimonial-meta">
+                                    <h4>Aditya K.</h4>
+                                    <p>Tech professional</p>
+                                </div>
+                                <div class="quote-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"></path><path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5"></path></svg>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"I've referred 5 colleagues from my office who were relocating to the US. Everyone's been happy with the service, and I've earned over ₹2,500 in rewards!"</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <div class="reward-tag">Earned ₹2,500 in referrals</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sticky Footer - Updated to match Zolve's style -->
+            <footer class="sticky-footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <p class="footer-quote">Help your friends move abroad smoothly. <span class="accent-text">Earn rewards</span> in the process.</p>
+                        <button class="cta-button primary" id="footerCta">
+                            Start Earning with Referrals
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Reminder Modal (initially hidden) - Updated to match Zolve's style -->
+        <div class="modal-overlay" id="reminderModal">
+            <div class="reminder-modal">
+                <div class="modal-header">
+                    <h3>Send a Reminder</h3>
+                    <button class="close-modal" id="closeModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="reminder-illustration">
+                        <!-- Reward illustration image removed -->
+                    </div>
+                    <div class="reminder-heading">
+                        <h4>One more nudge = <span class="accent-text">₹200</span> more reward</h4>
+                        <p>When they complete their signup, you both win!</p>
+                    </div>
+                    <div class="editable-message">
+                        <label for="messageText">Customize your message:</label>
+                        <textarea id="messageText">Hey! Just checking in 😄
+Finish your Zolve signup & earn ₹200!
+It's quick, and I'll get ₹500 too 🤝</textarea>
+                    </div>
+                    <div class="sharing-buttons">
+                        <button class="share-btn whatsapp-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#25D366" stroke="none">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </button>
+                        <button class="share-btn sms-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            SMS
+                        </button>
+                        <button class="share-btn email-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Email
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="reminder-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Last reminder sent 3 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confetti effect container -->
+        <div id="confetti-container"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/animations.js"></script>
+    <script src="js/interactions.js"></script>
+</body>
+</html>
