@@ -18,9 +18,99 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll animations
     setupScrollAnimations();
     
+    // Setup Nudge buttons
+    setupNudgeButtons();
+    
     // Remove any demo buttons that might exist
     removeDemoButtons();
 });
+
+// Setup Nudge Buttons functionality
+function setupNudgeButtons() {
+    const nudgeButtons = document.querySelectorAll('.nudge-button');
+    
+    // First, hide nudge buttons for completed referrals
+    document.querySelectorAll('.referral-row').forEach(row => {
+        const allStepsCompleted = row.querySelectorAll('.status-step.completed').length === 3; // Check if all 3 steps are completed
+        const nudgeButton = row.querySelector('.nudge-button');
+        
+        if (allStepsCompleted && nudgeButton) {
+            nudgeButton.style.display = 'none';
+        }
+    });
+    
+    // Setup click handlers for remaining visible buttons
+    nudgeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the friend's name from the parent referral row
+            const referralRow = this.closest('.referral-row');
+            const friendName = referralRow.querySelector('.referral-info h4').textContent;
+            
+            // Reference to the button for changing state
+            const nudgeBtn = this;
+            
+            // Show immediate feedback on the button
+            nudgeBtn.textContent = 'SENDING...';
+            nudgeBtn.style.backgroundColor = '#E55A38';
+            nudgeBtn.disabled = true;
+            
+            // Simulate API call with timeout
+            setTimeout(() => {
+                // Success state
+                nudgeBtn.textContent = 'NUDGE SENT!';
+                nudgeBtn.style.backgroundColor = '#48bb78';
+                
+                // Show a toast notification
+                showToast(`Reminder sent to ${friendName}!`);
+                
+                // Reset the button after a delay
+                setTimeout(() => {
+                    nudgeBtn.textContent = 'NUDGE THEM';
+                    nudgeBtn.style.backgroundColor = '';
+                    nudgeBtn.disabled = false;
+                }, 3000);
+            }, 1200);
+        });
+    });
+}
+
+// Function to show toast notification
+function showToast(message) {
+    // Create toast element if it doesn't exist
+    let toast = document.getElementById('toast-notification');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-notification';
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.right = '20px';
+        toast.style.backgroundColor = 'var(--primary)';
+        toast.style.color = 'white';
+        toast.style.padding = '12px 20px';
+        toast.style.borderRadius = '8px';
+        toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+        toast.style.zIndex = '1000';
+        toast.style.transition = 'all 0.3s ease';
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+        document.body.appendChild(toast);
+    }
+    
+    // Set message and show
+    toast.textContent = message;
+    setTimeout(() => {
+        toast.style.transform = 'translateY(0)';
+        toast.style.opacity = '1';
+    }, 10);
+    
+    // Hide after 3 seconds
+    setTimeout(() => {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+    }, 3000);
+}
 
 // Function to remove any demo buttons
 function removeDemoButtons() {

@@ -1176,6 +1176,80 @@ section {
   justify-content: center;
 }
 
+.referral-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 0.75rem;
+  transition: all 0.3s ease;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Create a new container for rewards and action buttons */
+.status-reward-actions {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  width: 100%;
+  gap: 8px; /* Exact 8px spacing between elements */
+  margin-top: 1rem;
+}
+
+.status-reward {
+  width: 100%; /* Full width in vertical layout */
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  background-color: rgba(255, 107, 68, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  height: 42px; /* Exact height match with button */
+  text-align: center;
+  border: 1px solid rgba(255, 107, 68, 0.1);
+  box-sizing: border-box; /* Ensure padding is included in height */
+  max-width: 350px; /* Limit width for better appearance */
+}
+
+.nudge-button {
+  width: 100%; /* Full width in vertical layout */
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(255, 107, 68, 0.25);
+  letter-spacing: 0.5px;
+  text-align: center;
+  white-space: nowrap;
+  height: 42px; /* Exact height match with reward */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* Ensure padding is included in height */
+  max-width: 350px; /* Limit width for better appearance */
+}
+
+.nudge-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 68, 0.35);
+}
+
+.nudge-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 107, 68, 0.2);
+}
+
 .share-btn {
   display: flex;
   align-items: center;
